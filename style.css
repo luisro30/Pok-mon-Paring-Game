@@ -1,0 +1,89 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+#app {
+  @apply text-center mt-10;
+  font-family: Avenir, Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: #2c3e50;
+}
+@font-face {
+  font-family: 'Pokemon Solid', sans-serif;
+  src: url('http://fonts.cdnfonts.com/css/pokemon-solid');
+}
+
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: url(recursos/Images/background.png);
+  background-position: center;
+}
+
+
+.titulo {
+  color: #dbe730;
+  -webkit-text-stroke: 2.6px rgb(0, 47, 255);
+  font-family: 'Pokemon Solid', sans-serif;
+  text-align: center;
+  font-size: 6em;
+}
+
+
+
+.game {
+  margin: 50px auto;
+  display: grid;
+  grid-template-columns: repeat(6, auto);
+  grid-gap: 10px;
+  justify-content: center;
+  perspective: 500px;
+}
+
+.card {
+  position: relative;
+  height: 175px;
+  width: 125px;
+}
+
+.cara {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  border-radius: 12px;
+  border-width: 1px;
+  border-style: solid;
+  overflow: hidden;
+  transition: transform 500ms ease-in-out;
+  backface-visibility: hidden;
+}
+
+.card.visible .detras {
+  transform: rotateY(-180deg);
+}
+
+.card.visible .frente {
+  transform: rotateY(0);
+}
+
+.dorso {
+  border-color: #000000;
+  transform: rotateY(0);
+}
+
+.frente {
+  border-color: rgb(0, 0, 0);
+  transform: rotateY(180deg);
+}
+
+.musica {
+  display: none;
+}
